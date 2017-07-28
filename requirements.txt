@@ -1,2 +1,1 @@
-flask
-flask-restplus
+flask==0.12.2
