@@ -1,17 +1,14 @@
 """
-This script runs the FlaskWebProject1 application using a development server.
+This script runs the FlaskWebProject application using a development server.
 """
 
-from flask import Flask
-from flask_restplus import Resource, Api
-
-app = Flask(__name__)
-api = Api(app)
-
-@api.route('/hello')
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
+from os import environ
+from FlaskWebProject1 import app
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    HOST = environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
+    app.run(HOST, PORT)
