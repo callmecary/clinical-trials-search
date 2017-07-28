@@ -1,2 +1,4 @@
 Flask<1
 flask_restplus<1
+requests
+json
