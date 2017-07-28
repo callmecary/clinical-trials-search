@@ -4,9 +4,13 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template
-from FlaskWebProject1 import app
+from FlaskWebProject1 import app, api, Resource
 
-@app.route('/')
+@api.route('/')
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
 @app.route('/home')
 def home():
     """Renders the home page."""
