@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template, Flask
 from flask_restplus import Api, Resource, fields
 from werkzeug.contrib.fixers import ProxyFix
-from FlaskWebProject1 import app, api, Resource
+from ClinicalTrails import app, api, Resource
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 

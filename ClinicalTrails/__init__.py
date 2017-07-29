@@ -10,4 +10,4 @@ api = Api(app, version='1.0', title='Mars API',
     description='A global clinical trails API',
 )
 
-import FlaskWebProject1.views
+import ClinicalTrails.views
