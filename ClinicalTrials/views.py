@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template, Flask
 from flask_restplus import Api, Resource, fields
 from werkzeug.contrib.fixers import ProxyFix
-from ClinicalTrails import app, api, Resource
+from ClinicalTrials import app, api, Resource
 import json, requests
 
 @api.route('/<string:keywords>')
