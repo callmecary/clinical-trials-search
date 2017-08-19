@@ -8,16 +8,12 @@ from flask_restplus import Api, Resource, fields
 from werkzeug.contrib.fixers import ProxyFix
 from ClinicalTrials import app, api, Resource
 import json, requests
+import db
 
-@api.route('/<string:keywords>')
-class HelloWorld(Resource):
-    def get(self,keywords):
-        url = 'https://clinicaltrialsapi.cancer.gov/v1/clinical-trials/'
-        params = dict(
-            _fulltext=keywords
-        )
-        resp = requests.get(url=url, params=params)
-        data = json.loads(resp.text)
+@api.route('/<string:keywords>&<int:page_num>&<int:page_size>')
+class Search(Resource):
+    def get(self,keywords,page_num,page_size):
+        data = db.search(keywords,page_num,page_size)
         return data
 
 
