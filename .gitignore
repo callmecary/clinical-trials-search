@@ -35,3 +35,6 @@ coverage.xml
 
 # Django stuff:
 *.log
+
+#vscode
+.vscode/
