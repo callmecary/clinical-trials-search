@@ -2,4 +2,4 @@ Flask<1
 flask_restplus<1
 requests
 ConfigParser
-PyGreSQL
+git+https://github.com/nwcell/psycopg2-windows.git@win32-py27#egg=psycopg2
