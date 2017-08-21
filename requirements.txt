@@ -3,3 +3,4 @@ flask_restplus<1
 requests
 ConfigParser
 psycopg2
+waitress==1.0.1 
