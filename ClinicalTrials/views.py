@@ -13,6 +13,6 @@ import db
 @api.route('/<string:keywords>&<int:page_num>&<int:page_size>')
 class Search(Resource):
     def get(self,keywords,page_num,page_size):
-        data = db.search(keywords,page_num,page_size)
+        data = db.search('Gastric&Cancer',page_num,page_size)
         return data
 
