@@ -14,6 +14,5 @@ import db
 class Search(Resource):
     def get(self,keywords,page_num,page_size):
         data = db.search('Gastric&Cancer',page_num,page_size)
-        print('Returning data...')
         return data
 
