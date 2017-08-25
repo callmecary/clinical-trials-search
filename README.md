@@ -4,18 +4,19 @@ RestAPI for clinical trails
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* RestAPI for clinical trails
+* 0.0.1
+* [Learn Markdown](http://clinicaltrails.azurewebsites.net/)
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* intall python 2.7.13 if you don't have
+* git clone 
+* $ cd ClinicalTrails (This is git repo's root folder)
+* $ virtualenv -p /usr/bin/python2.7 env
+* $ source env/bin/activate
+* $ pip install -r requirements.txt
+* $ python runserver.py
 
 ### Contribution guidelines ###
 
