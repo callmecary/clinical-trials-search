@@ -10,9 +10,23 @@ from ClinicalTrials import app, api, Resource
 import json, requests
 import db
 
-@api.route('/<string:keywords>&<int:page_num>&<int:page_size>')
-class Search(Resource):
+ns = api.namespace('api', description='SEARCH operations')
+@ns.route('/<string:keywords>&<int:page_num>&<int:page_size>')
+class search_deprecated(Resource):
     def get(self,keywords,page_num,page_size):
         data = db.search('Gastric&Cancer',page_num,page_size)
+        return data
+
+parser = api.parser()
+parser.add_argument('keywords', type=str, help='Keywords to search')
+parser.add_argument('page_num', type=int, help='Page offset')
+parser.add_argument('page_size', type=int, help='Limit per page')
+@ns.route('/v1/search')
+@ns.doc('search_by_keywords')
+class search(Resource):
+    @api.expect(parser)
+    def get(self):
+        args = parser.parse_args()
+        data = db.search('Gastric&Cancer',args['page_num'],args['page_size'])
         return data
 
