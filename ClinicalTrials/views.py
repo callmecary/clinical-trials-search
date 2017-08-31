@@ -11,12 +11,6 @@ import json, requests
 import db
 
 ns = api.namespace('api', description='SEARCH operations')
-@ns.route('/<string:keywords>&<int:page_num>&<int:page_size>')
-class search_deprecated(Resource):
-    def get(self,keywords,page_num,page_size):
-        data = db.search('Gastric&Cancer',page_num,page_size)
-        return data
-
 parser = api.parser()
 parser.add_argument('keywords', type=str, help='Keywords to search')
 parser.add_argument('page_num', type=int, help='Page offset')
