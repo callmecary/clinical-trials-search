@@ -27,6 +27,6 @@ class search(Resource):
     @api.expect(parser)
     def get(self):
         args = parser.parse_args()
-        data = db.search('Gastric&Cancer',args['page_num'],args['page_size'])
+        data = db.search(args['keywords'],args['page_num'],args['page_size'])
         return data
 
