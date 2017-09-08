@@ -24,3 +24,9 @@ class search(Resource):
         data = db.search(args['keywords'],args['page_num'],args['page_size'])
         return data
 
+@ns.route('/v1/contacts/<string:nct_id>')
+@ns.doc('get_contacts_by_nctid')
+class contacts(Resource):
+    def get(self,nct_id):
+        data = db.get_contacts_by_nctid(nct_id)
+        return data
