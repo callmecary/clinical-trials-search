@@ -45,3 +45,35 @@ LIMIT {}) t""".format(keywords,(which_page-1)*size_per_page,size_per_page)
         if conn is not None:
             conn.close()
             print ('Database connection closed.')
+
+def get_contacts_by_nctid(nct_id):
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        params = config()
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()     
+        query="""
+SELECT row_to_json(t)
+FROM(
+SELECT f.*,c.name,c.email,c.phone
+FROM facilities f
+INNER JOIN facility_contacts c
+ON c.facility_id = f.id
+WHERE f.nct_id = '{}'
+AND f.status = 'Recruiting'
+AND c.contact_type = 'primary') t
+""".format(nct_id)
+        cur.execute(query)
+        rows = cur.fetchall()
+        print(query)
+        cur.close()
+
+        return rows
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print ('Database connection closed.')
