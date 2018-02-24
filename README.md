@@ -1,12 +1,12 @@
 # README #
 
-RestAPI for clinical trails
+RestAPI for clinical trials search: http://clinicaltrails.azurewebsites.net
 
 ### What is this repository for? ###
 
-* RestAPI for clinical trails
+* RestAPI for clinical trials search based on aact database
 * 0.0.1
-* [Learn Markdown](http://clinicaltrails.azurewebsites.net/)
+* [AACT](https://www.ctti-clinicaltrials.org/aact-database)
 
 ### How do I get set up? ###
 
@@ -17,14 +17,3 @@ RestAPI for clinical trails
 * $ source env/bin/activate
 * $ pip install -r requirements.txt
 * $ python runserver.py
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
