@@ -1,6 +1,6 @@
 # README #
 
-RestAPI for clinical trials search: http://clinicaltrails.azurewebsites.net
+RestAPI for clinical trials search
 
 ### What is this repository for? ###
 
@@ -10,7 +10,7 @@ RestAPI for clinical trials search: http://clinicaltrails.azurewebsites.net
 
 ### How do I get set up? ###
 
-* intall python 2.7.13 if you don't have
+* intall python 2.7.13
 * git clone 
 * $ cd ClinicalTrials (This is git repo's root folder)
 * $ virtualenv -p /usr/bin/python2.7 env
